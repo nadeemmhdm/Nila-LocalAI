@@ -1,0 +1,65 @@
+# Nila LocalAI
+
+**Privacy-first, offline-first personal AI for your own computer.**
+
+Nila LocalAI is an open-source personal AI platform designed to keep the assistant, conversations, memory, voice processing and automation on the user's machine. Core operation does not require a cloud AI provider. When online research is explicitly enabled, Nila can gather public information, preserve source metadata, ingest useful knowledge locally and later retrieve it while offline.
+
+## Core goals
+
+- Local LLM inference through llama.cpp on loopback only
+- 8 GB RAM-friendly default profile
+- Local long-term memory, profile and knowledge base
+- Local STT, TTS and wake word
+- Files, terminal, computer tools, agents and routines with permission gates
+- Optional source-aware online research isolated from private memory
+- First-run assistant/owner/wake/language/voice customization
+- One-command setup, doctor, repair and verified updates
+- No telemetry by default
+
+## Default AI profile
+
+Initial target: **Qwen3 1.7B GGUF Q4_K_M + llama.cpp**. Model weights are downloaded separately and are never committed here.
+
+## Privacy boundary
+
+Offline mode blocks external access. Connected research is opt-in and receives only sanitized research queries. Personal profile fields, private memories, private files and raw voice recordings are not valid research payloads. Remote content is untrusted and is stored with provenance before retrieval.
+
+## Architecture
+
+```text
+Chat / Voice
+    |
+Identity + Local Memory + Knowledge
+    |
+Local LLM — llama.cpp @ 127.0.0.1
+    |
+Planner + Permission Gate
+    |-- Files / Terminal / Computer
+    |-- Agents / Routines
+    |-- Offline Knowledge Retrieval
+    |
+Optional Research Gate
+    |
+Search / Fetch / Crawl
+    |
+Untrusted-content pipeline
+    |
+Provenance-aware local knowledge
+```
+
+## Status
+
+Early secure foundation. Privacy/security invariants are implemented before autonomous capabilities are enabled.
+
+## Docs
+
+- [Architecture](docs/ARCHITECTURE.md)
+- [Privacy](docs/PRIVACY.md)
+- [Roadmap](docs/ROADMAP.md)
+- [Error codes](docs/ERROR_CODES.md)
+- [Security](SECURITY.md)
+- [Contributing](CONTRIBUTING.md)
+
+## License
+
+Apache-2.0 for project source. Third-party models/components retain their own licenses. See [LICENSE](LICENSE) and [THIRD_PARTY.md](THIRD_PARTY.md).

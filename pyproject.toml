@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nila-localai"
+version = "0.1.0.dev0"
+description = "Privacy-first offline personal AI with optional source-aware web research."
+requires-python = ">=3.11"
+license = "Apache-2.0"
+dependencies = []
+
+[project.scripts]
+nila = "nila.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
