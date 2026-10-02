@@ -17,9 +17,9 @@ def main()->int:
  ka=ks.add_parser("add");ka.add_argument("provider",choices=PROVIDERS.keys())
  kr=ks.add_parser("remove");kr.add_argument("provider",choices=PROVIDERS.keys())
  ks.add_parser("list")
- learn=s.add_parser("learn",help="Prepare a topic-learning job");learn.add_argument("topic")
+ learn=s.add_parser("learn",help="Learn a topic with an enabled teacher");learn.add_argument("topic");learn.add_argument("--provider",required=True,choices=PROVIDERS.keys());learn.add_argument("--model",required=True)
  s.add_parser("brain",help="Search local knowledge").add_argument("query")
- s.add_parser("doctor");s.add_parser("setup")
+ s.add_parser("doctor");s.add_parser("setup");s.add_parser("voice-status");s.add_parser("update-check")
  a=p.parse_args();svc=NilaService()
  if a.command=="serve":
   import uvicorn;uvicorn.run("nila.web:app",host=a.host,port=a.port,reload=False);return 0
