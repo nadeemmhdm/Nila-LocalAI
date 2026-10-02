@@ -53,12 +53,9 @@ Early secure foundation. Privacy/security invariants are implemented before auto
 
 ## Docs
 
-- [Architecture](docs/ARCHITECTURE.md)
-- [Privacy](docs/PRIVACY.md)
-- [Roadmap](docs/ROADMAP.md)
-- [Error codes](docs/ERROR_CODES.md)
+- [Architecture](docs/ARCHITECTURE.md)\n- [Installation](docs/INSTALLATION.md)\n- [Privacy](docs/PRIVACY.md)\n- [Memory & local knowledge](docs/MEMORY.md)\n- [Optional online research](docs/ONLINE_RESEARCH.md)\n- [Local voice](docs/VOICE.md)\n- [Updates](docs/UPDATES.md)\n- [Roadmap](docs/ROADMAP.md)\n- [Error codes](docs/ERROR_CODES.md)
 - [Security](SECURITY.md)
-- [Contributing](CONTRIBUTING.md)
+- [Contributing](CONTRIBUTING.md)\n- [Code of Conduct](CODE_OF_CONDUCT.md)
 
 ## License
 
