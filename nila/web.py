@@ -8,7 +8,7 @@ from nila.secrets import set_api_key,delete_api_key
 app=FastAPI(title="Nila LocalAI",docs_url="/api/docs")
 svc=NilaService()
 class Msg(BaseModel): text:str; chat_id:str|None=None
-class Key(BaseModel): key:str
+class Key(BaseModel): key:str\nclass Learn(BaseModel): topic:str;provider:str;model:str
 @app.get("/api/health")
 def health():return {"ok":True,"mode":"local"}
 @app.get("/api/chats")
@@ -30,7 +30,7 @@ def key(name:str,k:Key):
  set_api_key(name,k.key);return {"ok":True}
 @app.delete("/api/providers/{name}/key")
 def delkey(name:str):delete_api_key(name);return {"ok":True}
-@app.get("/",response_class=HTMLResponse)
+@app.post("/api/learn")\ndef learn_topic(x:Learn):\n from nila.learning import learn\n r=learn(svc.knowledge,x.topic,x.provider,x.model);return {"topic":r.topic,"provider":r.provider,"model":r.model,"saved":r.saved}\n@app.get("/api/brain")\ndef brain(q:str):return [{"url":x[0],"title":x[1],"snippet":x[2],"retrieved_at":x[3]} for x in svc.knowledge.search(q,10)]\n@app.get("/api/doctor")\ndef doctor():\n from nila.doctor import report\n return report()\n@app.get("/api/voice/status")\ndef voice_status():\n from nila.voice import capabilities\n return capabilities()\n@app.get("/api/update")\ndef update_check():\n from nila.update import latest\n return latest()\n@app.get("/",response_class=HTMLResponse)
 def ui():return HTML
 HTML=r'''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Nila</title><style>
 *{box-sizing:border-box}body{margin:0;font:15px system-ui;background:#0b0b0c;color:#eee}.app{display:grid;grid-template-columns:270px 1fr;height:100vh}.side{border-right:1px solid #252529;padding:14px;background:#111113}.brand{font-size:20px;font-weight:700;margin:8px}.new{width:100%;padding:12px;border:1px solid #333;border-radius:12px;background:#1a1a1e;color:#fff}.chats{margin-top:18px}.chat{padding:10px;border-radius:9px;cursor:pointer;white-space:nowrap;overflow:hidden}.chat:hover{background:#202024}.main{display:flex;flex-direction:column}.top{height:58px;border-bottom:1px solid #222;padding:18px 24px}.msgs{flex:1;overflow:auto;max-width:850px;width:100%;margin:auto;padding:30px}.m{padding:13px 16px;margin:12px 0;border-radius:16px;white-space:pre-wrap}.user{background:#242429;margin-left:18%}.assistant{margin-right:12%}.composer{max-width:850px;width:calc(100% - 30px);margin:12px auto 22px;display:flex;gap:8px;background:#19191d;border:1px solid #303036;padding:9px;border-radius:20px}textarea{flex:1;resize:none;background:none;border:0;color:#fff;outline:0;padding:8px;font:inherit}button{cursor:pointer}.send{border:0;border-radius:14px;padding:0 18px}.empty{text-align:center;margin-top:20vh;font-size:28px;font-weight:650}@media(max-width:700px){.app{grid-template-columns:1fr}.side{display:none}.msgs{padding:18px}.user{margin-left:8%}}
