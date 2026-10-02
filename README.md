@@ -51,11 +51,22 @@ Provenance-aware local knowledge
 
 Early secure foundation. Privacy/security invariants are implemented before autonomous capabilities are enabled.
 
-## Docs
+## Documentation
 
-- [Architecture](docs/ARCHITECTURE.md)\n- [Installation](docs/INSTALLATION.md)\n- [Privacy](docs/PRIVACY.md)\n- [Memory & local knowledge](docs/MEMORY.md)\n- [Optional online research](docs/ONLINE_RESEARCH.md)\n- [Local voice](docs/VOICE.md)\n- [Updates](docs/UPDATES.md)\n- [Roadmap](docs/ROADMAP.md)\n- [Error codes](docs/ERROR_CODES.md)
-- [Security](SECURITY.md)
-- [Contributing](CONTRIBUTING.md)\n- [Code of Conduct](CODE_OF_CONDUCT.md)
+| Guide | Purpose |
+| --- | --- |
+| [Architecture](docs/ARCHITECTURE.md) | System boundaries, memory layers and runtime design |
+| [Installation](docs/INSTALLATION.md) | Supported platforms and automated setup contract |
+| [Privacy](docs/PRIVACY.md) | Offline and connected-mode privacy guarantees |
+| [Memory & Local Knowledge](docs/MEMORY.md) | Personal memory and persistent researched knowledge |
+| [Online Research](docs/ONLINE_RESEARCH.md) | Safe optional web research pipeline |
+| [Local Voice](docs/VOICE.md) | Offline STT, TTS and wake-word design |
+| [Updates](docs/UPDATES.md) | Verified release-update design |
+| [Roadmap](docs/ROADMAP.md) | Implementation phases |
+| [Error Codes](docs/ERROR_CODES.md) | Stable NLA error identifiers |
+| [Security](SECURITY.md) | Security policy and reporting |
+| [Contributing](CONTRIBUTING.md) | Contribution workflow |
+| [Code of Conduct](CODE_OF_CONDUCT.md) | Community standards |
 
 ## License
 
