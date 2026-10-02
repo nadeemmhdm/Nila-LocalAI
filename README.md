@@ -11,7 +11,7 @@ Nila LocalAI is an open-source personal AI platform designed to keep the assista
 - Local long-term memory, profile and knowledge base
 - Local STT, TTS and wake word
 - Files, terminal, computer tools, agents and routines with permission gates
-- Optional source-aware online research isolated from private memory
+- Optional source-aware online research isolated from private memory\n- Opt-in Topic Learning with OpenAI, Gemini, Anthropic, OpenRouter, Ollama Cloud and compatible teacher APIs\n- Teacher knowledge persisted locally for later offline retrieval
 - First-run assistant/owner/wake/language/voice customization
 - One-command setup, doctor, repair and verified updates
 - No telemetry by default
@@ -59,7 +59,7 @@ Early secure foundation. Privacy/security invariants are implemented before auto
 | [Installation](docs/INSTALLATION.md) | Supported platforms and automated setup contract |
 | [Privacy](docs/PRIVACY.md) | Offline and connected-mode privacy guarantees |
 | [Memory & Local Knowledge](docs/MEMORY.md) | Personal memory and persistent researched knowledge |
-| [Online Research](docs/ONLINE_RESEARCH.md) | Safe optional web research pipeline |
+| [Online Research](docs/ONLINE_RESEARCH.md) | Safe optional web research pipeline |\n| Teacher APIs | Optional cloud-assisted topic learning; runtime inference stays local |
 | [Local Voice](docs/VOICE.md) | Offline STT, TTS and wake-word design |
 | [Updates](docs/UPDATES.md) | Verified release-update design |
 | [Roadmap](docs/ROADMAP.md) | Implementation phases |
