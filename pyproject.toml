@@ -8,7 +8,7 @@ version = "0.1.0.dev0"
 description = "Privacy-first offline personal AI with optional source-aware web research."
 requires-python = ">=3.11"
 license = "Apache-2.0"
-dependencies = []
+dependencies = ["keyring>=25,<26"]
 
 [project.scripts]
 nila = "nila.cli:main"
